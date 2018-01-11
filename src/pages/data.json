@@ -1,0 +1,12 @@
+{
+  "devs": [
+    {
+      "name": "Jordan Jones",
+      "image": "./devImages/jordan_jones.jpg",
+      "github": "https://github.com/Pr0x1m4",
+      "type": "JavaScript",
+      "currently": "Alteroo",
+      "previously": "Palisadoes Foundation"
+    }
+  ]
+}

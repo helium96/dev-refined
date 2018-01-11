@@ -4,6 +4,10 @@ import styled from "styled-components";
 import { Flex, Box } from "grid-styled";
 
 import banner from "./banner.jpeg";
+import pattern from "./round.png";
+
+import devlist from "./data.json";
+
 const primary = "#2DE5FF";
 const primary_shadow = "#2AD0E6";
 
@@ -16,6 +20,10 @@ const ActionButton = styled.a`
   font-size: 20px;
   border-right: 3px solid ${primary_shadow};
   border-bottom: 3px solid ${primary_shadow};
+
+  &:active {
+    background: ${primary_shadow};
+  }
 `;
 
 const Banner = () => (
@@ -29,19 +37,36 @@ const Banner = () => (
       color: "white"
     }}
   >
-    <Box my={200} mx={20}>
+    <Box mt={200} mx={20}>
       <p
         style={{
-          fontSize: "40px",
-          fontWeight: "900",
+          fontSize: "27px",
           textTransform: "uppercase"
         }}
       >
         A curated list of talented and passionate
       </p>
-      <p style={{ fontSize: "50px", fontFamily: "Rubik Mono One" }}>
+      <hr
+        style={{
+          border: "none",
+          outline: "none",
+          height: "5px",
+          width: "30%",
+          margin: "0",
+          background: primary
+        }}
+      />
+      <h1
+        style={{
+          fontSize: "50px",
+          fontFamily: "Rubik-Bold",
+          textTransform: "uppercase"
+        }}
+      >
         Jamaican Developers
-      </p>
+      </h1>
+      <br />
+      <br />
       <ActionButton href="https://github.com/Pr0x1m4" target="_blank">
         Join now!
       </ActionButton>
@@ -49,16 +74,25 @@ const Banner = () => (
   </Flex>
 );
 
-const LanguageBlock = styled(Box)`
-  width: 150px;
-  height: 100px;
+const DevBlock = styled(Box)`
+  max-width: 250px;
+  height: 250px;
   background: ${primary};
+  color: white;
+  background-blend-mode: multiply;
+  background-image: url(${pattern});
   border-radius: 5px;
   border-right: 5px solid ${primary_shadow};
   border-bottom: 5px solid ${primary_shadow};
   text-align: center;
 `;
 
+const DevImage = styled.img`
+  margin-top: 20px;
+  width: 50%;
+  filter: grayscale(100%);
+  border-radius: 100%;
+`;
 const LanguageTitle = styled.p`
   font-size: 50px;
   color: white;
@@ -70,6 +104,17 @@ const LanguageTitle = styled.p`
 const IndexPage = () => (
   <div>
     <Banner />
+    <Flex p={60}>
+      {devlist.devs.map(dev => {
+        return (
+          <DevBlock key={dev.name}>
+            <DevImage src={require(dev.image)} />
+            <p style={{ fontSize: "20px" }}>{dev.name}</p>
+            <p style={{ fontSize: "12px" }}>{dev.type}</p>
+          </DevBlock>
+        );
+      })}
+    </Flex>
   </div>
 );
 
