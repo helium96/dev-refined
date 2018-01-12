@@ -18,11 +18,30 @@ const ActionButton = styled.a`
   background: ${primary};
   border-radius: 5px;
   font-size: 20px;
+  float: right;
   border-right: 3px solid ${primary_shadow};
   border-bottom: 3px solid ${primary_shadow};
 
   &:active {
     background: ${primary_shadow};
+  }
+`;
+
+const Title = styled.h1`
+  font-size: 70px;
+  font-family: "Rubik-Bold";
+  text-transform: uppercase;
+
+  @media all and (max-width: 1000px) and (max-width: 3000px) {
+    font-size: 70px;
+  }
+
+  @media all and (max-width: 700px) and (max-width: 1000px) {
+    font-size: 60px;
+  }
+
+  @media all and (max-width: 300px) and (max-width: 7000px) {
+    font-size: 50px;
   }
 `;
 
@@ -37,7 +56,11 @@ const Banner = () => (
       color: "white"
     }}
   >
-    <Box mt={200} mx={20}>
+    <Box
+      pt={200}
+      pl={20}
+      style={{ maxWidth: "900px", margin: "0 auto", width: "100%" }}
+    >
       <p
         style={{
           fontSize: "27px",
@@ -51,20 +74,12 @@ const Banner = () => (
           border: "none",
           outline: "none",
           height: "5px",
-          width: "30%",
+          width: "100%",
           margin: "0",
           background: primary
         }}
       />
-      <h1
-        style={{
-          fontSize: "50px",
-          fontFamily: "Rubik-Bold",
-          textTransform: "uppercase"
-        }}
-      >
-        Jamaican Developers
-      </h1>
+      <Title>Jamaican Developers</Title>
       <br />
       <br />
       <ActionButton href="https://github.com/Pr0x1m4" target="_blank">
@@ -104,7 +119,12 @@ const LanguageTitle = styled.p`
 const IndexPage = () => (
   <div>
     <Banner />
-    <Flex p={60}>
+    <Flex
+      style={{ maxWidth: "900px", margin: "0 auto" }}
+      pl={20}
+      pt={60}
+      pb={60}
+    >
       {devlist.devs.map(dev => {
         return (
           <DevBlock key={dev.name}>

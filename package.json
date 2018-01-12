@@ -10,18 +10,19 @@
     "react-helmet": "^5.2.0",
     "styled-components": "^2.4.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "deploy": "gatsby build && gh-pages -d public --branch host",
+    "format":
+      "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "gh-pages": "^1.1.0",
     "grid-styled": "^2.0.0-11",
     "prettier": "^1.10.1"
   }
