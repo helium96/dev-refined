@@ -7,6 +7,14 @@
       "type": "JavaScript",
       "currently": "Alteroo",
       "previously": "Palisadoes Foundation"
+    },
+    {
+      "name": "Luke Chen Shui",
+      "image": "./devImages/luke_chen_shui.jpg",
+      "github": "https://github.com/chenshuiluke",
+      "type": "JavaScript",
+      "currently": "Niageo Technologies",
+      "previously": "Advanced Internet Technologies, Inc."
     }
   ]
 }
