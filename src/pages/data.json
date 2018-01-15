@@ -15,6 +15,14 @@
       "type": "JavaScript",
       "currently": "Niageo Technologies",
       "previously": "Advanced Internet Technologies, Inc."
+    },
+    {
+      "name": "Agyei Masters",
+      "image": "./devImages/agyeimasters.jpg",
+      "github": "https://github.com/helium96",
+      "type": "JavaScript",
+      "currently": "The Vinelist",
+      "previously": "Project Grapevine."
     }
   ]
 }
